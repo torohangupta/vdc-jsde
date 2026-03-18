@@ -3,14 +3,13 @@
   "version": "1.0.0",
   "description": "A barebones Javascript Development Enviornment for the Valorant Draft Circuit.",
   "scripts": {
-    "dev0": "nodemon ./src/agentFrequency.js --no-warnings --ignore bin/",
-
-    
+    "dev0": "nodemon ./src/trackers.js --no-warnings --ignore bin/",
+    "dev1": "nodemon ./src/updateDate.js --no-warnings --ignore bin/",
+    "dev2": "nodemon ./src/migration.js --no-warnings --ignore bin/",
+    "dev3": "nodemon src/combinesStats.js --no-warnings --ignore bin/",
     "compile": "(cls || clear) && tsc ./utils/enums/index && tsc ./prisma/index",
     "clean": "rm ./enums/*.js && find ./prisma/*.js ! -name prismadb.js -delete",
-
     "push": "(cls || clear) && npx prisma db push",
-
     "generate": "npx prisma generate",
     "studio": "(cls || clear) && npx prisma studio"
   },
@@ -19,7 +18,8 @@
   "dependencies": {
     "@napi-rs/canvas": "^0.1.52",
     "@prisma/client": "^5.8.1",
-    "dotenv": "^16.4.1"
+    "dotenv": "^16.4.1",
+    "fontkit": "^2.0.4"
   },
   "devDependencies": {
     "@types/node": "^20.11.13",
